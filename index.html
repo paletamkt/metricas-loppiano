@@ -340,12 +340,44 @@ footer{border-top:1px solid var(--border-d);padding:32px 24px;max-width:1200px;m
 .sticky-bar-primary{flex:1;background:var(--gold);color:var(--bg-d);border:none;padding:14px 16px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:4px;text-align:center;cursor:pointer;}
 .sticky-bar-secondary{background:transparent;color:#8a9ba8;border:1px solid rgba(232,226,217,.15);padding:14px 16px;font-family:'DM Sans',sans-serif;font-size:12px;text-decoration:none;border-radius:4px;text-align:center;white-space:nowrap;cursor:pointer;}
 
+/* ── PACKAGE CARD ── */
+.pkg-card{border:1px solid var(--border-l);border-radius:4px;overflow:hidden;margin-top:0;}
+.pkg-top{background:var(--bg-l3);padding:32px 40px;border-bottom:1px solid var(--border-l);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.pkg-eyebrow{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--text-l);letter-spacing:-.01em;}
+.pkg-context{display:flex;gap:10px;flex-wrap:wrap;}
+.pkg-pill{font-size:11px;letter-spacing:.08em;padding:6px 14px;border-radius:100px;background:rgba(11,86,115,.08);border:1px solid rgba(11,86,115,.15);color:var(--teal);font-weight:500;}
+.pkg-body{display:grid;grid-template-columns:1fr 320px;gap:0;background:var(--border-l);}
+.pkg-deliverables{background:var(--bg-l2);padding:48px 40px;}
+.pkg-del-title{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--text-lm);margin-bottom:28px;display:flex;align-items:center;gap:12px;}
+.pkg-del-title::before{content:'';width:24px;height:1px;background:var(--text-lm);}
+.pkg-del-list{display:flex;flex-direction:column;gap:28px;}
+.pkg-del-item{display:flex;align-items:flex-start;gap:16px;}
+.pkg-del-icon{font-size:20px;flex-shrink:0;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.pkg-icon-teal{background:rgba(11,86,115,.08);border:1px solid rgba(11,86,115,.15);}
+.pkg-icon-gold{background:rgba(201,146,42,.08);border:1px solid rgba(201,146,42,.15);}
+.pkg-icon-red{background:rgba(139,26,26,.08);border:1px solid rgba(139,26,26,.15);}
+.pkg-del-name{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--text-l);margin-bottom:4px;}
+.pkg-del-desc{font-size:13px;color:var(--text-lm);line-height:1.7;font-weight:300;}
+.pkg-pricing-side{background:var(--bg-l3);padding:48px 36px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;border-left:1px solid var(--border-l);}
+.pkg-price-wrap{text-align:center;}
+.pkg-price-from{font-size:13px;color:var(--text-lm);margin-bottom:4px;}
+.pkg-price-from span{text-decoration:line-through;color:var(--red-light);font-weight:500;}
+.pkg-price-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-lm);margin-bottom:4px;}
+.pkg-price-val{font-family:'Fraunces',serif;font-size:60px;font-weight:900;color:var(--teal);line-height:1;animation:numGlowGold 3s ease-in-out infinite;}
+.pkg-price-per{font-size:12px;color:var(--text-lm);margin-top:6px;}
+.pkg-price-note{font-size:11px;color:var(--teal);letter-spacing:.08em;margin-top:12px;background:rgba(11,86,115,.06);border:1px solid rgba(11,86,115,.12);padding:8px 16px;border-radius:100px;display:inline-block;}
+.pkg-cta-wrap{display:flex;flex-direction:column;gap:16px;}
+.pkg-guarantee{font-size:12px;color:var(--text-lm);text-align:center;line-height:1.6;}
+.pkg-footer{background:rgba(201,146,42,.06);border-top:1px solid rgba(201,146,42,.15);padding:20px 40px;display:flex;align-items:center;gap:16px;font-size:13px;color:var(--text-lm);line-height:1.7;}
+
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .sticky-bar{display:flex;}nav{padding:16px 20px;}.nav-links{display:none;}
   .numeros-grid,.conquistas-grid,.frentes-grid,.roi-grid{grid-template-columns:1fr;}
   .problema-layout,.case-layout,.timeline-grid,.pricing-breakdown,.assinatura-parties,.resp-ritmo{grid-template-columns:1fr;}
-  .timeline-arrow{display:none;}.resp-card{flex-direction:column;gap:20px;}.resp-since{text-align:left;}
+  .pkg-body{grid-template-columns:1fr;}
+  .pkg-pricing-side{border-left:none;border-top:1px solid var(--border-l);}
+  .pkg-top{flex-direction:column;align-items:flex-start;}
   .roi-result{flex-direction:column;}.roi-result-right{text-align:left;}
   .pricing-total{flex-direction:column;align-items:flex-start;}
   footer{flex-direction:column;gap:12px;text-align:center;padding-bottom:80px;}.footer-info{text-align:center;}
@@ -651,9 +683,9 @@ footer{border-top:1px solid var(--border-d);padding:32px 24px;max-width:1200px;m
 <!-- ROI — DARK -->
 <section id="roi" class="section-dark">
   <div class="container">
-    <div class="section-label reveal">O cálculo</div>
-    <h2 class="section-title reveal reveal-delay-1">Quanto precisa gerar<br>para se pagar.</h2>
-    <p class="section-desc reveal reveal-delay-2">Com base nos dados reais da operação Loppiano.</p>
+    <div class="section-label reveal">O retorno</div>
+    <h2 class="section-title reveal reveal-delay-1">O retorno já está<br>na base. Falta ativá-lo.</h2>
+    <p class="section-desc reveal reveal-delay-2">Com 8.349 clientes inativos identificados, cada ação de reativação gera receita que já deveria estar acontecendo.</p>
     <div class="roi-grid reveal reveal-delay-2">
       <div class="roi-card"><div class="roi-step">Base disponível</div><div class="roi-val">8.349</div><div class="roi-label">clientes inativos identificados. Cada um já demonstrou interesse na Loppiano ao se cadastrar.</div></div>
       <div class="roi-card"><div class="roi-step">Meta conservadora</div><div class="roi-val">2/dia</div><div class="roi-label">Apenas 2 clientes inativos voltando uma vez a mais por mês. Taxa de reativação de 0,7% sobre a base inativa.</div></div>
@@ -681,55 +713,83 @@ footer{border-top:1px solid var(--border-d);padding:32px 24px;max-width:1200px;m
       <p class="section-desc reveal reveal-delay-2" style="margin:0 auto 0;text-align:center;">Não é uma troca. É uma evolução sobre o que já está funcionando.</p>
     </div>
     <div class="reveal-gate reveal reveal-delay-3">
-      <p>O cálculo acima mostra o retorno.<br>Quando estiver pronto para ver o investimento, clique para revelar.</p>
+      <p>Quando estiver pronto para ver o investimento, clique para revelar.</p>
       <div class="reveal-btn-wrap">
         <div class="reveal-ring"></div>
         <button class="btn-reveal" id="revealBtn" onclick="revealPricing()"><span class="lock-icon">🔒</span> Revelar investimento</button>
       </div>
     </div>
+
     <div class="pricing-wrapper" id="pricingWrapper">
-      <div class="pricing-context"><span class="anim-pulse">💡</span><span>O Nível 2 continua integralmente. O Plano Retenção é uma <strong>camada adicional</strong> que se conecta ao que já está rodando.</span></div>
-      <div class="pricing-breakdown">
-        <div class="pb-card">
-          <div class="pb-label">Nível 2 · Em vigor há 12 meses</div>
-          <div class="pb-desc">Tudo que já está rodando continua sem alteração: tráfego pago, conteúdo, redes sociais, iFood, CRM, playbook.</div>
-          <div class="pb-value"><sup>R$</sup><span class="counter-anim" data-target="4500">4.500</span></div>
-          <div class="pb-per">por mês · contrato vigente</div>
-          <ul class="pb-features">
-            <li>Tráfego pago estratégico (Meta ADS)</li>
-            <li>20 postagens + 150 stories/mês</li>
-            <li>Gestão e acompanhamento iFood</li>
-            <li>CRM de vendas + playbook</li>
-            <li>Checkpoint semanal e mensal</li>
-          </ul>
+      <div class="pkg-card">
+
+        <!-- Topo: nome e contexto -->
+        <div class="pkg-top">
+          <div class="pkg-eyebrow">Plano Retenção · Nível 3</div>
+          <div class="pkg-context">
+            <span class="pkg-pill">Aditivo ao contrato atual</span>
+            <span class="pkg-pill">Sem custo de rampagem</span>
+            <span class="pkg-pill">Ativação imediata</span>
+          </div>
         </div>
-        <div class="pb-card pb-card-featured">
-          <div class="pb-label pb-label-gold">+ Plano Retenção · Nível 3</div>
-          <div class="pb-desc">A camada que ativa a base construída: Donuz estratégico, régua automática, reativação da base inativa.</div>
-          <div class="pb-value pb-value-gold"><sup>+R$</sup><span class="counter-anim" data-target="3000">3.000</span></div>
-          <div class="pb-per">por mês · camada adicional</div>
-          <ul class="pb-features">
-            <li>Reorganização e ativação completa do Donuz</li>
-            <li>Automação de relacionamento (WhatsApp + e-mail)</li>
-            <li>Campanha de reativação da base inativa</li>
-            <li>Programa de embaixadores e indicação</li>
-            <li>Análise de retenção, NPS e performance</li>
-          </ul>
+
+        <!-- Corpo: entregáveis + valor lado a lado -->
+        <div class="pkg-body">
+          <div class="pkg-deliverables">
+            <div class="pkg-del-title">O que está incluído</div>
+            <div class="pkg-del-list">
+              <div class="pkg-del-item">
+                <span class="pkg-del-icon pkg-icon-teal">📲</span>
+                <div>
+                  <div class="pkg-del-name">Ativação da base inativa</div>
+                  <div class="pkg-del-desc">Segmentação, campanhas de reativação via WhatsApp e cashback como incentivo de retorno para os 8.349 clientes inativos.</div>
+                </div>
+              </div>
+              <div class="pkg-del-item">
+                <span class="pkg-del-icon pkg-icon-gold">🏆</span>
+                <div>
+                  <div class="pkg-del-name">Fidelização estratégica com o Donuz</div>
+                  <div class="pkg-del-desc">Reorganização completa da plataforma, mecânica de pontos, cashback, prêmios por frequência e programa de embaixadores.</div>
+                </div>
+              </div>
+              <div class="pkg-del-item">
+                <span class="pkg-del-icon pkg-icon-red">⚡</span>
+                <div>
+                  <div class="pkg-del-name">Régua automática de relacionamento</div>
+                  <div class="pkg-del-desc">Automação por comportamento: inatividade, aniversário, frequência e indicação — via WhatsApp e e-mail marketing.</div>
+                </div>
+              </div>
+              <div class="pkg-del-item">
+                <span class="pkg-del-icon pkg-icon-teal">📊</span>
+                <div>
+                  <div class="pkg-del-name">Análise de retenção e NPS</div>
+                  <div class="pkg-del-desc">Acompanhamento mensal da taxa de retenção, qualidade da base e ajuste contínuo de estratégia com base em dados reais.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pkg-pricing-side">
+            <div class="pkg-price-wrap">
+              <div class="pkg-price-from">de <span>R$7.500</span></div>
+              <div class="pkg-price-label">por</div>
+              <div class="pkg-price-val">R$<span class="counter-anim" data-target="7000">7.000</span></div>
+              <div class="pkg-price-per">por mês</div>
+              <div class="pkg-price-note">Aditivo ao contrato vigente</div>
+            </div>
+            <div class="pkg-cta-wrap">
+              <a href="https://wa.me/5592991063303" target="_blank" class="btn-primary" style="width:100%;text-align:center;display:block;">Ativar o Plano Retenção →</a>
+              <div class="pkg-guarantee">Mesmo estrategista. Mesma parceria.<br>Nova camada de resultado.</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="pricing-total">
-        <div>
-          <div class="pt-label">Investimento total · Nível 3 completo</div>
-          <div class="pt-desc">Atração, conversão e retenção sob a mesma estratégia integrada.</div>
+
+        <!-- Rodapé: nota de mercado -->
+        <div class="pkg-footer">
+          <span class="anim-float" style="font-size:16px;flex-shrink:0;">💡</span>
+          <span>Contratar separado os profissionais equivalentes custaria entre R$8.000 e R$12.000/mês — sem integração entre áreas e sem os 12 meses de contexto acumulado sobre a Loppiano.</span>
         </div>
-        <div>
-          <div class="pt-num"><span class="pt-currency">R$</span><span class="counter-anim" data-target="7500">7.500</span></div>
-          <div class="pt-per">por mês · Nível 3 completo</div>
-        </div>
-      </div>
-      <div class="pricing-market-note">
-        <div class="pmn-icon anim-float">💡</div>
-        <div class="pmn-text"><strong>Contexto de mercado:</strong> Contratar separado os profissionais necessários para o Nível 3 custaria entre R$8.000 e R$12.000/mês — sem integração entre áreas e sem os 12 meses de contexto acumulado que a Paleta Food já tem sobre a Loppiano.</div>
+
       </div>
     </div>
   </div>
