@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loppiano Pizza — Relatório de Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bordeaux:#8B1A1A;
+    --gold:#C9922A;
+    --teal:#0B5673;
+    --cream:#f7f3ec;
+    --ink:#241512;
+    --ink-soft:#5c4f49;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    font-family:'DM Sans', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* HERO — dark section */
+  .hero{
+    background:linear-gradient(160deg, var(--bordeaux) 0%, #6d1414 100%);
+    color:var(--cream);
+    padding:64px 24px 56px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:6px;
+    background:linear-gradient(90deg, var(--gold), var(--teal));
+  }
+  .eyebrow{
+    font-family:'Barlow Condensed', sans-serif;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(28px, 5vw, 44px);
+    line-height:1.15;
+    max-width:680px;
+    margin:0 auto 14px;
+  }
+  .hero p{
+    font-size:15px;
+    color:#f0dede;
+    max-width:520px;
+    margin:0 auto;
+  }
+
+  /* LIGHT section — content */
+  .content{
+    padding:56px 20px 72px;
+    max-width:960px;
+    margin:0 auto;
+  }
+
+  .card{
+    background:#ffffff;
+    border-radius:18px;
+    padding:8px;
+    box-shadow:0 20px 50px -20px rgba(139,26,26,0.18), 0 2px 8px rgba(0,0,0,0.04);
+    border:1px solid rgba(201,146,42,0.25);
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .card.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  .card-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 22px 16px;
+    border-bottom:1px solid #f0e9de;
+  }
+  .card-header .tag{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-size:12px;
+    color:var(--teal);
+    background:rgba(11,86,115,0.08);
+    padding:5px 12px;
+    border-radius:999px;
+  }
+  .card-header h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--ink);
+  }
+  .live-dot{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .live-dot span{
+    width:7px;height:7px;border-radius:50%;
+    background:#2f9e4c;
+    box-shadow:0 0 0 3px rgba(47,158,76,0.18);
+  }
+
+  .embed-wrap{
+    padding:18px;
+  }
+  .embed-frame{
+    width:100%;
+    aspect-ratio:5/3;
+    border-radius:12px;
+    overflow:hidden;
+    background:#f4f0e8;
+    border:1px solid #ece2d0;
+  }
+  .embed-frame iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+  }
+
+  .footnote{
+    text-align:center;
+    margin-top:28px;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+
+  /* Signature footer — dark strip */
+  .signature{
+    background:var(--ink);
+    color:#cbb9a8;
+    text-align:center;
+    padding:22px 20px;
+    font-family:'Barlow Condensed', sans-serif;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    font-size:12px;
+  }
+  .signature b{color:var(--gold);}
+
+  @media (max-width:520px){
+    .hero{padding:48px 18px 44px;}
+    .card-header{flex-direction:column;align-items:flex-start;gap:8px;}
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="eyebrow">Loppiano Pizza · Paleta Food</div>
+    <h1>Relatório de Performance</h1>
+    <p>Acompanhamento consolidado dos indicadores de marketing e mídia, atualizado em tempo real.</p>
+  </section>
+
+  <section class="content">
+    <div class="card" id="reportCard">
+      <div class="card-header">
+        <div>
+          <div class="tag">Dashboard</div>
+        </div>
+        <div class="live-dot"><span></span>Atualização automática</div>
+      </div>
+      <div class="embed-wrap">
+        <div class="embed-frame">
+          <iframe title="report" src="https://app.reportei.com/embed/bHPwikvQkQnBjxGp69Ie8rtxkYIMhR99" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <p class="footnote">Dados sincronizados diretamente do Reportei. Em caso de divergência, verificar diretamente na plataforma de origem.</p>
+  </section>
+
+  <footer class="signature">
+    Paleta Food <b>×</b> Loppiano Pizza
+  </footer>
+
+<script>
+  const card = document.getElementById('reportCard');
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.1});
+  observer.observe(card);
+  // fallback in case observer doesn't fire immediately (e.g. already in view)
+  window.addEventListener('load', ()=> setTimeout(()=>card.classList.add('visible'), 200));
+</script>
+
+</body>
+</html>
